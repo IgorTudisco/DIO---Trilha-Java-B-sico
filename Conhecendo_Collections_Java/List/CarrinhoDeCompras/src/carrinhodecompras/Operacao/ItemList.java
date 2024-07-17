@@ -48,7 +48,7 @@ public class ItemList {
     }
   }
     
-    public int calcularValorTotal(){
+    public int calcularQuantidadeDeItens(){
         if (!itemList.isEmpty()) {
             return listaDeCompras.size();
         } else {
