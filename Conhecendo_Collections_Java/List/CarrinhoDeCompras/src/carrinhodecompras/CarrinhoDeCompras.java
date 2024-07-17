@@ -13,7 +13,10 @@ public class CarrinhoDeCompras{
         listaDeCompras.adicionarItem("relógio", 500, 1);
         listaDeCompras.adicionarItem("relógio", 500, 1);
         listaDeCompras.adicionarItem("Bandagem", 500, 100);
-        System.out.println(listaDeCompras.calcularValorTotal()); 
+        listaDeCompras.exibirItens();
+        System.out.println("Quantidade de itens: " + listaDeCompras.calcularQuantidadeDeItens());
+        System.out.println("Valor total da compra é: " + listaDeCompras.calcularValorTotal());
+        
         
         listaDeCompras.removerItem("relógio");
         System.out.println(listaDeCompras.calcularValorTotal());
