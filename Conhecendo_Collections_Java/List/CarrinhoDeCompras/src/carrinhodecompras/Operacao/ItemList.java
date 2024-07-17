@@ -19,7 +19,7 @@ public class ItemList {
         
         List<Carrinho> listaDeComprasPraRemover = new ArrayList<>();
 
-        if (!itemList.isEmpty()) {
+        if (!listaDeCompras.isEmpty()) {
             
             for(Carrinho item : listaDeCompras){
                 if(item.getNome().equalsIgnoreCase(nome)){
@@ -37,9 +37,9 @@ public class ItemList {
 
     public double calcularValorTotal() {
     double valorTotal = 0d;
-    if (!itemList.isEmpty()) {
+    if (!listaDeCompras.isEmpty()) {
       for (Carrinho item : listaDeCompras) {
-        double valorItem = item.getPreco() * item.getQuant();
+        double valorItem = item.getPreco() * item.getQuantidade();
         valorTotal += valorItem; //valorTotal = valorTotal + valorItem;
       }
       return valorTotal;
@@ -48,18 +48,18 @@ public class ItemList {
     }
   }
     
-    public int calcularQuantidadeDeItens(){
-        if (!itemList.isEmpty()) {
-            return listaDeCompras.size();
+    public void calcularQuantidadeDeItens(){
+        if (!listaDeCompras.isEmpty()) {
+            System.out.println("Quantidade de itens: " + listaDeCompras.size());
         } else {
-          System.out.println("A lista está vazia!");
+            System.out.println("A lista está vazia!");
         }
         
     }
     
     public void exibirItens(){
        
-        if (!itemList.isEmpty()) {
+        if (!listaDeCompras.isEmpty()) {
              System.out.println(listaDeCompras);
         } else {
           System.out.println("A lista está vazia!");
