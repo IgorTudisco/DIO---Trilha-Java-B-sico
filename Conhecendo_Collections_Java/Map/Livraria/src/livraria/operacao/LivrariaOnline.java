@@ -26,6 +26,10 @@ public class LivrariaOnline {
         }
     }
     
+    public void exibirLivros(){
+        System.out.println(livrariaMap);
+    }
+    
     public void exibirLivrosOrdenadosPorPreco(){
         Map<String, Livro> treeMapLivraria = new TreeMap(livrariaMap);
         System.out.println(treeMapLivraria);
@@ -36,7 +40,7 @@ public class LivrariaOnline {
         if(!livrariaMap.isEmpty()){            
             for(Livro l : livrariaMap.values()){
                 
-                if(l.getTitulo() == autor){
+                if(l.getAutor() == autor){
                     livroByAutor = l;
                     break;
                 }
@@ -50,7 +54,7 @@ public class LivrariaOnline {
         Double valor = Double.MIN_VALUE;
         if(!livrariaMap.isEmpty()){
              for(Livro l : livrariaMap.values()){                
-                if(valor >= l.getPreco()){
+                if(valor <= l.getPreco()){
                     valor = l.getPreco();
                     livroCaro = l;
                 }                 
@@ -61,7 +65,7 @@ public class LivrariaOnline {
     
     public Livro exibirLivroMaisBarato(){
         Livro livroBarato = null;
-        Double valor = Double.MIN_VALUE;
+        Double valor = Double.MAX_VALUE;
         if(!livrariaMap.isEmpty()){
              for(Livro l : livrariaMap.values()){                
                 if(l.getPreco() <= valor){
